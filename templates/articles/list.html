@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все статьи</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .article-title {
+            color: #2d3436;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .article-meta {
+            color: #636e72;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .btn-primary {
+            background-color: #6c5ce7;
+            border-color: #6c5ce7;
+            padding: 10px 25px;
+            border-radius: 5px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #5b4bcf;
+            border-color: #5b4bcf;
+        }
+        
+        .btn-outline-primary {
+            color: #6c5ce7;
+            border-color: #6c5ce7;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            text-align: center;
+            color: #636e72;
+            border-top: 1px solid #eee;
+        }
+        
+        .no-articles {
+            text-align: center;
+            padding: 40px;
+            color: #636e72;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .badge {
+            background-color: #a29bfe;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header text-center">
+            <h1 class="mb-3"> Редактор статей</h1>
+            <p class="lead mb-4">Простая платформа для создания и редактирования статей</p>
+            <a href="/articles/" class="btn btn-light me-2">
+                Все статьи
+            </a>
+            <a href="/articles/create/" class="btn btn-outline-light">
+                + Новая статья
+            </a>
+        </div>
+
+        <!-- Заголовок страницы -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>Все статьи</h2>
+                <p class="text-muted">Всего статей: {{ articles|length }}</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="/articles/create/" class="btn btn-primary">
+                    + Создать статью
+                </a>
+            </div>
+        </div>
+
+        {% if articles %}
+            <div class="row">
+                {% for article in articles %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="article-title mb-0">{{ article.title|truncatechars:40 }}</h5>
+                            <span class="badge">ID: {{ article.id }}</span>
+                        </div>
+                        
+                        <div class="article-meta">
+                            <div><strong>Автор:</strong> {{ article.author }}</div>
+                            <div><small>{{ article.created_at|date:"d.m.Y H:i" }}</small></div>
+                        </div>
+                        
+                        <p class="text-muted mb-3">
+                            {{ article.content|truncatewords:20 }}
+                        </p>
+                        
+                        <a href="/articles/{{ article.id }}/edit/" class="btn btn-outline-primary btn-sm">
+                            Редактировать
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-articles">
+                <h4 class="mb-3">Статей пока нет</h4>
+                <p class="mb-4">Будьте первым, кто создаст статью!</p>
+                <a href="/articles/create/" class="btn btn-primary">
+                    Создать первую статью
+                </a>
+            </div>
+        {% endif %}
+
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
