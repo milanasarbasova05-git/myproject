@@ -6,112 +6,169 @@
     <title>Все статьи</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            background-color: #fdf6e3;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #5d4037;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .article-card {
-            background: white;
-            border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
         }
-        
+
+        .header {
+            background: linear-gradient(135deg, #d7ccc8, #bcaaa4);
+            color: #5d4037;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #a1887f;
+        }
+
+        .article-card {
+            background: #fff8e1;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid #ffd54f;
+        }
+
         .article-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #ffecb3;
         }
-        
+
         .article-title {
-            color: #2d3436;
-            font-weight: 600;
-            margin-bottom: 10px;
+            color: #5d4037;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
-        
+
         .article-meta {
-            color: #636e72;
-            font-size: 14px;
+            color: #8d6e63;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #d7ccc8;
+        }
+
+        .btn-primary {
+            background-color: #ffb74d;
+            border-color: #ffb74d;
+            color: #5d4037;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffa726;
+            border-color: #ffa726;
+            color: #5d4037;
+            transform: scale(1.05);
+        }
+
+        .btn-outline-primary {
+            color: #ff9800;
+            border-color: #ff9800;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #ff9800;
+            border-color: #ff9800;
+            color: #5d4037;
+            transform: scale(1.05);
+        }
+
+        .btn-warning {
+            background-color: #ffa726;
+            border-color: #ffa726;
+            color: #5d4037;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-warning:hover {
+            background-color: #ff9800;
+            border-color: #ff9800;
+            color: #5d4037;
+            transform: scale(1.05);
+        }
+
+        .badge {
+            background-color: #ffcc80;
+            color: #5d4037;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .api-title {
+            color: #e65100;
+            font-size: 1.2rem;
             margin-bottom: 15px;
         }
-        
-        .btn-primary {
-            background-color: #6c5ce7;
-            border-color: #6c5ce7;
-            padding: 10px 25px;
-            border-radius: 5px;
+
+        .api-code {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffb74d;
+            font-family: monospace;
+            color: #5d4037;
+            overflow-x: auto;
         }
-        
-        .btn-primary:hover {
-            background-color: #5b4bcf;
-            border-color: #5b4bcf;
-        }
-        
-        .btn-outline-primary {
-            color: #6c5ce7;
-            border-color: #6c5ce7;
-            padding: 5px 15px;
-            border-radius: 5px;
-        }
-        
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            text-align: center;
-            color: #636e72;
-            border-top: 1px solid #eee;
-        }
-        
+
         .no-articles {
             text-align: center;
-            padding: 40px;
-            color: #636e72;
-            background: white;
-            border-radius: 10px;
+            padding: 50px;
+            color: #8d6e63;
+            background: #fff8e1;
+            border-radius: 15px;
+            border: 2px dashed #ffcc80;
         }
-        
-        .badge {
-            background-color: #a29bfe;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 12px;
-        }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Шапка -->
         <div class="header text-center">
-            <h1 class="mb-3"> Редактор статей</h1>
-            <p class="lead mb-4">Простая платформа для создания и редактирования статей</p>
-            <a href="/articles/" class="btn btn-light me-2">
-                Все статьи
-            </a>
-            <a href="/articles/create/" class="btn btn-outline-light">
-                + Новая статья
-            </a>
+            <h1 class="mb-3">Библиотека статей</h1>
+            <p class="lead mb-4">Простая платформа для создания и редактирования статей.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a href="/articles/" class="btn btn-primary">
+                    <i class="fas fa-list me-2"></i>Все статьи
+                </a>
+                <a href="/articles/create/" class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>Новая статья
+                </a>
+                <a href="/api/articles/" class="btn btn-warning">
+                    <i class="fas fa-code me-2"></i>Все статьи (API)
+                </a>
+                <a href="/api/articles/1/" class="btn btn-warning">
+                    <i class="fas fa-file-alt me-2"></i>Пример статьи (API)
+                </a>
+            </div>
         </div>
 
-        <!-- Заголовок страницы -->
         <div class="row mb-4">
             <div class="col-md-6">
                 <h2>Все статьи</h2>
@@ -119,7 +176,7 @@
             </div>
             <div class="col-md-6 text-end">
                 <a href="/articles/create/" class="btn btn-primary">
-                    + Создать статью
+                    <i class="fas fa-plus me-2"></i>Создать статью
                 </a>
             </div>
         </div>
@@ -129,22 +186,22 @@
                 {% for article in articles %}
                 <div class="col-md-6 col-lg-4">
                     <div class="article-card">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
                             <h5 class="article-title mb-0">{{ article.title|truncatechars:40 }}</h5>
                             <span class="badge">ID: {{ article.id }}</span>
                         </div>
-                        
+
                         <div class="article-meta">
-                            <div><strong>Автор:</strong> {{ article.author }}</div>
-                            <div><small>{{ article.created_at|date:"d.m.Y H:i" }}</small></div>
+                            <div><strong><i class="fas fa-user me-1"></i>Автор:</strong> {{ article.author }}</div>
+                            <div><small><i class="fas fa-calendar me-1"></i>{{ article.created_at|date:"d.m.Y H:i" }}</small></div>
                         </div>
-                        
-                        <p class="text-muted mb-3">
-                            {{ article.content|truncatewords:20 }}
+
+                        <p class="mb-3" style="color: #6d4c41;">
+                            {{ article.content|truncatewords:25 }}
                         </p>
-                        
+
                         <a href="/articles/{{ article.id }}/edit/" class="btn btn-outline-primary btn-sm">
-                            Редактировать
+                            <i class="fas fa-edit me-1"></i>Редактировать
                         </a>
                     </div>
                 </div>
@@ -155,15 +212,13 @@
                 <h4 class="mb-3">Статей пока нет</h4>
                 <p class="mb-4">Будьте первым, кто создаст статью!</p>
                 <a href="/articles/create/" class="btn btn-primary">
-                    Создать первую статью
+                    <i class="fas fa-plus-circle me-2"></i>Создать первую статью
                 </a>
             </div>
         {% endif %}
 
-
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

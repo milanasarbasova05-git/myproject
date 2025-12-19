@@ -1,13 +1,9 @@
-﻿# Python
-__pycache__/
+﻿__pycache__/
 *.pyc
 
-# Django
 db.sqlite3
 
-# IDE
 .idea/
 
-# Virtual Environment
 venv/
 .venv/

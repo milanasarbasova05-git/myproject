@@ -9,8 +9,9 @@
 
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            background-color: #fdf6e3;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #5d4037;
             padding: 20px;
         }
 
@@ -27,26 +28,49 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            color: white;
-            padding: 20px;
+            background: linear-gradient(135deg, #d7ccc8);
+            color: #5d4037;
+            padding: 30px;
             border-radius: 10px;
             margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #a1887f;
         }
 
         .btn-primary {
-            background-color: #6c5ce7;
-            border-color: #6c5ce7;
+            background-color: #ffb74d;
+            border-color: #ffb74d;
+            color: #5d4037;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
         }
 
-        .form-control {
-            border-radius: 5px;
-            padding: 10px;
+        .btn-primary:hover {
+            background-color: #ffa726;
+            border-color: #ffa726;
         }
+
+        .btn-outline-secondary {
+            color: #8d6e63;
+            border-color: #8d6e63;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #8d6e63;
+            border-color: #8d6e63;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Шапка -->
         <div class="header">
             <h1 class="mb-0">Создать статью</h1>
             <p class="mb-0">Заполните форму ниже</p>
